@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular的事件</title>
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="event_module">
+    <div ng-controller="click_ctrl">
+        <button ng-click="count = count + 1">点我</button>
+        <p>{{count}}</p>
+    </div>
+    <div ng-controller="person_ctrl">
+        <button ng-click="toggle()">隐藏/显示</button>
+
+        <p ng-hide="myVar">
+            name: <input type="text" ng-model="firstName"/><br/>
+            lastname: <input type="text" ng-model="lastName"/><br/>
+            <br/>
+            Full Name : {{firstName + " " + lastName}}
+        </p>
+    </div>
+</div>
+<script src="js/controller/event_module.js"></script>
+</body>
+</html>

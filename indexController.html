@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>angularjs控制器</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+	<!--
+		AngularJS 控制器 控制AngularJS 应用程序的数据
+		AngularJS 控制器 是常规的JS对象
+
+		ng-controller指令定义了应用程序控制器
+		控制器由标准的js对象的构造函数创建
+		控制器的 $scope 是控制器所指向的应用程序HTML元素
+	-->
+	<div ng-app="" ng-controller="namesController">
+		名：<input type="text" ng-model="names[0].name"><br><br>
+		姓：<input type="text" ng-model="names[0].country"><br><br>
+		姓名：{{varOfObj()}}<br><br>
+		<div ng-controller="namesController">
+			<ul>
+				<li ng-repeat="x in names">
+					{{ x.name + ", " + x.country}}
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- 
+		应用程序有ng-app定义，应用程序在<div>内运行
+		ng-controller指令把控制器命名为object。
+		ng-model指令绑定输入域到控制域的属性（firtName,lastName）
+	 -->
+	<script src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/controller/namesController.js"></script>
+	</body>
+</html>

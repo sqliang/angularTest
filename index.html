@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>angularjs</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+	<!--
+		ng-app指令：初始化一个angularjs应用程序
+		ng-init指令：初始化应用程序数据
+		ng-model指令：把应用程序数据绑定到HTML元素
+	-->
+	<div ng-app="" ng-init="firstName='sqliang';cost=5;">
+		<p>在输入框中尝试输入：</p>
+		<p>姓名：<input type="text" ng-model="name"></p>
+		<p ng-bind="name"></p>		
+		<div ng-init="firstName='John'">
+			<p>姓名为 <span ng-bind="firstName"></span></p>
+		</div>
+		<p>我的第一个表达式：{{ 5 + 5 }}</p>
+		<p>我的第二个表达式：{{name + " :" + firstName}}</p>
+	<!--angularjs 使用表达式把数据绑定到 html-->
+		<p>购买数量：<input type="num" ng-model="num"></p>
+		<p>单价：<span ng-bind="cost"></span>元</p>
+		<p>总价：<span ng-bind="num*cost"></span></p>
+		<div ng-init="person={name:'hehesqliang',age:24}">
+			<p>姓名：{{person.name}}</p>
+		</div>
+		<div ng-init="points=[1,2,3,4,6,7]">
+			<p>第五个值：{{points[4]}}</p>
+		</div>
+
+		<div data-ng-init="names=[
+		{name:'Jani',country:'Norway'},
+		{name:'Hege',country:'Sweden'},
+		{name:'Kai',country:'Denmark'}]">
+			<p>使用ng-repeat来循环数组</p>
+			<ul>
+				<li data-ng-repeat="x in names">
+					{{x.name + ', ' + x.country}}
+				</li>
+			</ul>
+		</div>
+		<!--
+			ng-app指令定义了angularjs应用程序的根元素
+			ng-app在网页加载完毕时会自动引导（自动初始化）应用程序
+			ng-app可以通过一个值（如：ng-app="myModel"）连接到代码模块
+
+			ng-init通常不使用，我们使用一个控制器或模块来代替
+
+			ng-model指令可以：
+				为应用程序数据类型验证（number,email,required）
+				为应用程序数据提供状态（invalid,dirty,touched,error）
+				为HTML元素提供CSS类
+				绑定HTML元素到HTML表单
+
+			ng-repeat对集合中（数组中）的每个项克隆一次HTML元素
+		
+		-->
+	</div>
+
+	<script src="js/angular.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angularjs的过滤器</title>
+    <script src="js/angular.min.js"></script>
+</head>
+<body ng-app="filterDemo">
+    <div ng-controller="person_ctrl">
+        <h2>{{lastName | uppercase}}</h2>
+        <h3>{{lastName | lowercase}}</h3>
+    </div>
+    <div ng-controller="cost_ctrl">
+        数量：<input type="number" ng-model="quantity"/><br/>
+        单价：<input type="number" ng-model="price"/><br/>
+        <p>总价={{quantity * price | currency}}</p>
+    </div>
+    <div ng-controller="names_ctrl">
+        <ul>
+            <li ng-repeat="x in names | orderBy:'country'">
+                {{x.name + ', from ' + x.country}}
+            </li>
+        </ul>
+    </div>
+    <div ng-controller="names_ctrl">
+        <p><input type="text" ng-model="test"/></p>
+        <ul>
+            <li ng-repeat="x in names | filter:test | orderBy:'country'">
+                {{x.name + ", " + x.country}}
+            </li>
+        </ul>
+    </div>
+    <script src="js/controller/filter_modlue.js"></script>
+</body>
+</html>

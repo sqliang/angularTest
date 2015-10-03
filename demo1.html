@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo1</title>
+</head>
+<body ng-app>
+<div ng-controller="HelloAngular">
+	<h1>{{greeting.text}},augular</h1>
+</div>
+<div ng-controller="GreetCtrl">
+	<p>Hello {{name}}!</p>
+</div>
+<div ng-controller="ListCtrl">
+	<ul>
+		<li ng-repeat="name in names">
+			{{name}} from {{department}}
+		</li>
+	</ul>
+</div>
+<div ng-controller="testHelloCtrl">
+	Say Hello to : <input type="text" ng-model="name"/><br/>
+	<h3>Hello,{{getName()}}</h3>
+</div>
+<script src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/HelloAngular.js"></script>
+</body>
+</html>

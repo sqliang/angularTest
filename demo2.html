@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <title>模块化演示</title>
+</head>
+<body ng-app="MyModule">
+<div ng-controller="helloAngular">
+    <h1>{{greeting.text}},Angular</h1>
+</div>
+<div ng-controller="greetCtrl">
+    <p>Hello {{name}}!</p>
+</div>
+<div ng-controller="listCtrl">
+    <ul>
+        <li ng-repeat="name in names">
+            {{name}} from {{department}}
+        </li>
+    </ul>
+</div>
+<div ng-controller="listCtrl">
+    <ul>
+        <li ng-repeat="name in names">
+            {{name}} ,from {{department}}
+        </li>
+    </ul>
+</div>
+<div ng-controller="hehe">
+    <ul>
+        <li ng-repeat="hehe in hehes">
+            <h3>{{hehe}}</h3>
+        </li>
+    </ul>
+</div>
+<script type="text/javascript" src="js/demo2.js"></script>
+</body>
+</html>
