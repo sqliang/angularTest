@@ -21,6 +21,31 @@
             Full Name : {{firstName + " " + lastName}}
         </p>
     </div>
+
+    <div ng-controller="event_ctrl">
+        Root Scope:
+        <span>MyEvent</span> count: {{count}}
+        <ul>
+            <li ng-repeat="i in [1]" ng-controller="event_ctrl">
+                <button ng-click="$emit('MyEvent')">
+                    $emit('MyEvent')
+                </button>
+                <!--<span>循环次数：{{i}}</span>-->
+                <button ng-click="$broadcast('MyEvent')">
+                    $broadcast('MyEvent')
+                </button>
+                <br/>
+                Middle scope
+                <span>MyEvent</span> count: {{count}}
+                <ul>
+                    <li ng-repeat="item in [1,2]" ng-controller="event_ctrl">
+                        Leaf scope
+                        <span>MyEvent</span> count: {{count}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 </div>
 <script src="js/controller/event_module.js"></script>
 </body>

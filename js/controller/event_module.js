@@ -14,4 +14,10 @@ event_module.controller('person_ctrl', function ($scope) {
     $scope.toggle = function (){
         $scope.myVar = !$scope.myVar;
     };
+});
+event_module.controller('event_ctrl', function ($scope) {
+    $scope.count = 0;
+    $scope.$on("MyEvent", function () {
+        $scope.count++;
+    })
 })
