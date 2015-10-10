@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myFormModule">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div style="width: 300px;margin: 30px auto;">
+        <form name="myForm" ng-submit="save()" ng-controller="form_ctrl">
+            <div class="form-group">
+                <label>userName:</label>
+                <input type="text"  ng-model="user.userName" required/>
+            </div>
+            <div class="form-group">
+                <label>password:</label>
+                <input type="text"  ng-model="user.password" required/>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" ng-disabled="myForm.$invalid"/>
+            </div>
+        </form>
+    </div>
+    <div style="width: 300px;margin: 20px auto;">
+        <div style="height: 40px;background: #dddddd;margin-bottom: 20px;line-height: 40px;padding-left: 8px;" contentEditable="true" ng-model="content" title="Click to edit">Some</div>
+        <pre>model = {{content}}</pre>
+    </div>
+<script src="js/angular.min.js"></script>
+    <script src="js/controller/form_ctrl.js"></script>
+</body>
+</html>

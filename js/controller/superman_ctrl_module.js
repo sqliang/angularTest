@@ -49,10 +49,13 @@ superManModule.directive("speed", function () {
 superManModule.directive("light", function () {
     return {
         require : '^superman',
+        controller: function($scope){
+            this.hello = function () {
+                alert("nihao");
+            }
+        },
         link : function (scope,element,attrs,supermanCtrl) {
             supermanCtrl.addLight();
         }
     }
 });
-
-

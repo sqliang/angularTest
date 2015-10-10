@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="singleScopeModule">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>独立scope</title>
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css"/>
 </head>
 <body>
+    <div class="container">
+        <div class="form-group">
+            <hello></hello>
+        </div>
+        <div class="form-group">
+            <hello></hello>
+        </div>
+        <div class="form-group">
+            <hello></hello>
+        </div>
+        <div class="form-group">
+            <hello></hello>
+        </div>
+    </div>
 
+    <div ng-controller="myCtrl">
+        <drink flavor="{{ctrlFlavor}}"></drink>
+        <div class="container">
+            <div class="form-group">
+                <label>Ctrl:</label>
+                <input type="text" class="form-control" ng-model="ctrlFlavor"/>
+            </div>
+            <div class="form-group">
+                <label>Directive:</label>
+                <meat flavor="ctrlFlavor"></meat>
+            </div>
+        </div>
+    </div>
+    <div class="container" ng-controller="greetCtrl">
+        <greeting greet="sayHello(name)"></greeting>
+    </div>
+    <div class="container" ng-controller="greetCtrl">
+        <greeting greet="sayHello(name)"></greeting>
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script src="js/controller/single_scope_module.js"></script>
 </body>
 </html>
