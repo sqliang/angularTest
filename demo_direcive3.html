@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="loadCtrl">
+    <loader howToLoad="loadData()">
+        <h3>滑动加载。。。</h3>
+    </loader>
+</div>
+<div ng-controller="loadCtrl2">
+    <loader howToLoad="loadData2()">
+        <h3>滑动加载。。。</h3>
+    </loader>
+</div>
+<script src="js/angular.min.js"></script>
+<script src="js/controller/load_directive_module.js"></script>
+</body>
+</html>
